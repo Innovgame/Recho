@@ -11,6 +11,7 @@ a{
 .side-bar{
     float: left;
     width: 20%;
+    position: fixed;
 }
 .side-bar > *{
     padding: 10px 15px;
@@ -41,24 +42,34 @@ a{
     display: inline-block;
     margin-bottom: 10px;
 }
-.article-list{
+.article-list,.article{
     background: #fff;
     margin-right: 20%;
     padding: 20px 30px;
     box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
 }
-.article-list .item .title{
+.article-list .item .title,.article .title{
     color: #454545;
     font-size: 22px;
     font-weight: 700;
 }
-.article-list .item .status{
+.article-list .item .status,.article .status{
     font-size: 13px;
     color: #ccc;
 }
 .article-list .item > *{
     margin: 10px 0;
 }
-.article-list .item{
+.article-list .item,.article{
     margin-bottom: 30px;
+}
+.main .article{
+    color: #eee;
+}
+.article .title{
+    margin-bottom: 30px;
+}
+.article .content{
+    margin-top: 15px;
+    color: #454545;
 }
