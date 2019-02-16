@@ -10,7 +10,7 @@ a{
 }
 .side-bar{
     float: left;
-    width: 25%;
+    width: 20%;
 }
 .side-bar > *{
     padding: 10px 15px;
@@ -30,7 +30,8 @@ a{
 }
 .main{
     float: right;
-    width: 75%;
+    width: 80%;
+    color: #454545;
 }
 .header .logo{
     line-height: 1;
@@ -39,4 +40,25 @@ a{
     font-size: 30px;
     display: inline-block;
     margin-bottom: 10px;
+}
+.article-list{
+    background: #fff;
+    margin-right: 20%;
+    padding: 20px 30px;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+}
+.article-list .item .title{
+    color: #454545;
+    font-size: 22px;
+    font-weight: 700;
+}
+.article-list .item .status{
+    font-size: 13px;
+    color: #ccc;
+}
+.article-list .item > *{
+    margin: 10px 0;
+}
+.article-list .item{
+    margin-bottom: 30px;
 }
