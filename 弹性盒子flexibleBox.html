@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弹性盒子</title>
+    <style type="text/css">
+        h3{
+            text-indent: 32px;
+        }
+        pre{
+            font-weight: 900;
+            font-size: 20px;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <h1>弹性盒子Flexible box</h1>
+    <hr>
+    <h2>弹性盒</h2>
+    <h3>Flexible Box</h3>
+    <pre>
+        弹性盒子是css3的一种新的布局模式，为了适应不同屏幕大小以及设备类型时候确保拥有恰当的行为的布局方式
+        通过display属性设置
+            {display:flex;}
+        
+        两个概念
+            主轴/侧轴
+            都有起点与终点(箭头方向)
+            主/侧轴可以更改
+        
+        display
+            {display:flex||inline-flex;}块级弹性盒和内联弹性盒
+        flex-direction 改变弹性盒子主轴和侧轴的方向 (默认x轴为主轴，y轴为侧轴 方向同箭头方向)
+            {flex-direction:row|row-reverse|column|column-reverse;}
+        flex-wrap 内容超出是否换行显示
+            {flex-wrap:nowrap|wrap|wrap-reverse;}
+        justify-content 设置弹性盒在主轴上的对齐方式
+            {justify-content:flex-start|flex-end|center|space-around;}
+        align-items 设置弹性盒在侧轴上的对齐方式
+            {align-items:flex-start|flex-end|center|baseline|stretch;}
+        align-content 设置子元素的各个行的对齐
+            {align-content:flex-start|flex-end|center|space-between|space-around|stretch;}
+        flex-grow 设置弹性盒子的拓展比例(用来分配父对象的多余空间)
+            {flex-grow:number(default 0);}
+        flex-shrink 设置弹性盒子的伸缩比例(加权比例)
+            {flex-shrink:number(defalut 0);}
+        flex-basis:lenth|auto  设置弹性盒子的伸缩基准值
+        flex:none 综合写法
+        order:[integer] 改变子元素的出现顺序，小的在前面
+        align-self 设置弹性盒子自身在侧轴方向上的对齐方式
+            {align-self:auto|flex-start|flex-end|center|baseline|stretch;}
+    </pre>
+    <h2>
+        媒体查询(用于做响应式布局)
+    </h2>
+    <pre>
+        媒体查询可以让我们根据设备的显示器的特性(如视口的宽度，屏幕比例，设备方向：横向或者纵向)为其设置css样式，
+        媒体查询由媒体类型和一个或者多个检测媒体特性的条件组成
+
+        语法1：
+            @media &lt;mediatype&gt; and|not|only(media feature){css-code;}
+        语法2：
+            针对不同的媒体使用不同的stylesheets
+            &lt;link rel="stylesheet" media="mediatype and|not|only(media feature)" href="mystylessheeet.css"&gt;
+    </pre>
+    <h2>移动端布局</h2>
+    <pre>
+        1.百分比布局
+        2.rem(等比缩放布局) (需要结合媒体查询 min-width/max-width)
+    </pre>
+</body>
+</html>
