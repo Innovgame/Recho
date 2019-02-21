@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS知识</title>
+    <style>
+        p{
+            text-indent: 32px;
+        }
+        pre{
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 1.7;
+        }
+        h3{
+            text-indent: 32px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS基础知识</h1>
+    <hr>
+    <h2>css样式表的建立</h2>
+    <h3>
+        内部样式表
+    </h3>
+        <pre>
+            &lt;style type="text/css"&gt;
+                ...
+            &lt;/style&gt;
+        </pre>
+    <h3>
+        内联样式
+        <pre>
+            &lt;标签 style="属性：值;属性：值;" &gt;&lt;/标签&gt;
+        </pre>
+    </h3>
+    <h3>
+        外部样式表
+        <pre>
+            建立一个xxx.css文件
+            引用外部样式表(关联):
+            &lt;link rel="stylesheet" href="xxx.css" type="text/css"&gt;
+        </pre>
+    </h3>
+    <h2>
+        样式表的优先级：
+    </h2>
+    <p>内联>(内部，外部 二者取决于在文档中的先后顺序，后面的覆盖前面的)</p>
+    <h2>
+        Css语法(选择符+声明)
+    </h2>
+    <pre>
+        选择符{
+            属性：值；（声明）
+            属性：值；（声明）
+        }
+    </pre>
+    <h3>
+        选择符
+    </h3>
+    <pre>
+        元素选择符：div{} span{} h2{}
+        id选择符：  #id名{}
+        类选择符：  .类名{}
+        *通配符：   *{}
+        群组选择符：选择符1,选择符2,选择符3{}
+        伪类选择符：
+            a:link{} a:hover{} a:active{} a:visited{}
+        伪元素选择符:
+            p::before{}                
+    </pre>
+    <h3>
+        权重
+    </h3>
+    <pre>
+        w(内联=1000)>w(#id=100)>w(.class=10)>w(元素=1)
+        相同的权重，在文档流后面的起作用
+        在属性值后加!importand;权重最高
+    </pre>
+    <h3>
+        文本相关的属性
+    </h3>
+    <pre>
+        font-family
+            {font-family:英文字体,"中文字体","英文 字体"} 中文字体和带空格的要加双引号
+        font-size:数值;
+            (em单位=16px 默认，但也与body中的数值有关 rem相对字体 px像素单位)
+        color文本的颜色
+            color:颜色;#454545十六进制数 rgb(0-255,0-255,0-255) rgb(0-255,0-255,0-255,0-1)
+        font-weight:字体加粗
+            {font-weight:border/bold/normal/100-900}
+        font-style:字体样式
+            {font-style:ltalic/oblique/normal;}
+        text-align:字体水平对齐(父对象中的子对象)
+            {text-align:left/right/center/justify;}
+        line-height:设置行高
+            {line-height:normal/数值;}
+        text-decoration:文字修饰
+            {text-decoration:none/uderline/overline/line-through;}
+        text-indent:首行缩进
+            {text-indent:2px;}
+    </pre>
+    <h3>
+        列表属性
+    </h3>
+    <pre>
+        list-style-type:列表符号样式
+            {list-style-type:disc(实心圆)/circle(空心圆)/square(实心方块)/none;}
+        list-style-image:使用图片作为列表符号
+            {list-style-image:url(路径);}
+        list-style-position:定义列表符号位置
+            {list-style-position:outside(外边)/inside(里边);}
+        list-style 设置样式 去掉样式
+            {list-style:none;}
+    </pre>
+    <h3>
+        背景属性
+    </h3>
+    <pre>
+        背景颜色
+            {background-color:颜色值;}
+        背景图片,相当于底色，不占文档流位置，img标签占文档流位置
+            {background-image:url();}
+        设置图片重复
+            {background-repeat:no-repeat/repeat/repeatX/repeatY;}
+        设置图片位置
+            {background-position:值1 值2;} 值：X Y center
+        背景属性缩写
+            {background:#454545十六进制数 url() no-repeat center;}
+    </pre>
+    <h3>
+        浮动属性(文档流，从上到下，从左到右),脱离文档流
+    </h3>
+    <pre>
+        语法：
+            {float:left/right/none;}
+        浮动元素会紧贴前一个元素(如果空间不够则换行)
+        clear属性(清除浮动)
+            {clear:both/left/right/none;}
+        [注意]
+            因为子元素设置了浮动，导致父元素的高度塌陷
+            [解决方案]
+                1.给父元素加一个固定的高度
+                2.父元素添加声明{overflow:hidden;}
+                3.在浮动元素下方添加一个空的元素，一般用div，并设置{
+                    clear:both;height:0;
+                }
+        浮动的元素周围文字会围绕浮动元素排列
+    </pre>
+    <h3>
+        盒子模型
+    </h3>
+    <pre>
+        盒子模型包括：
+            内容(content)
+            内边距(padding)
+            外边框(border)
+            外边距(magin)
+
+        border的三个属性
+            border 可分为 上 右 下 左 (顺时针)
+            {border-width:5px;bordre-color:#000;border-style:solid;}
+            缩写：{border:4px #000 solid;}
+        padding
+            [注意] padding的值是额外加在原有的大小之上的，若想保证元素大小不变，需要从元素的宽高上减去padding
+            值，border也是如此。当然还可以改变盒子模型的大小计算方式{box-sizing: border-box;}
+        margin
+            写法与border顺序相同
+            [tip]
+                可用于元素的居中对齐
+                相邻的两个盒子的margin会融合，取最大值(相同则一样)
+                当父级子级都设置了margin，子级的margin会传递给父级
+                解决办法：给父级设置overflow:hidden;属性
+    </pre>
+    <h3>
+        文本溢出
+    </h3>
+    <pre>
+        overflow 属性 定义溢出的元素内容区的内容会如何处理
+            {overflow:visible/hidden/scroll/auto/inherit;}
+            visible:默认值 内容不会修剪，会超出框外
+            hiddden:内容会被修剪，并且修剪的内容是不可见的
+            scroll:内容会被修剪，会出现滚动条，可查看其余部分
+            auto:内容会被修剪，会出现滚动条
+            inherit:规定从父元素哪里继承这个属性
+        white-space 属性 设置如何处理元素内的空白
+            {white-space:normal/pre/nowrap/pre-wrap/pre-line/inherit;}
+        text-overflow 属性 规定当文本内容溢出后元素发生的事情
+            {text-overflow:clip/ellipsis;}
+            clip:溢出部分被裁切
+            ellipsis:溢出部分显示为省略号
+    </pre>
+    <h3>
+        元素类型
+    </h3>
+    <pre>
+        块状元素(默认独占父元素的宽度，独占一行)
+            div p dt dd dl ol ul h1-h6
+            form hr iframe colgrounp col table tr td 等
+            默认情况下，块元素会独占一行，通俗的说，连个相邻的块元素不会出现并列显示(浮动元素除外)
+            默认情况下，会按顺序自上向下排列
+            块元素都可以定义自己的宽度和高度，没有定义的则被自己的子物体撑开
+            块元素一般作为其他元素的容器
+
+        内敛元素
+            常见：a span i em strong b 
+            行内逐个显示
+            没有自己的形状，不能定义宽高，它显示的高度根据自己所包含的内容高度和宽度来确定，最小单位会呈现矩形
+            内联元素也会遵循盒子模型的基本规则，可定义padding border magin background，但个别属性不能正常显示
+
+        可变元素 需要根据上下文的关系确定该元素是块级元素或者内联元素
+            applet java中的
+            button 
+            del 删除文本
+            iframe 
+            ins 插入的文本
+            map 图片区域
+            object 对象
+
+        元素类型转换
+            使用display属性可以将块级元素和内联元素转换
+                {display:none/inline/block/inline-block/list-item/table;}
+            float 也可以让内联元素像块级元素一样显示
+    </pre>
+    <h3>
+        定位
+    </h3>
+    <pre>
+        position 属性 定义建立元素布局所用的定位机制
+            {position:static/absolute/relative/fixed;}
+            static 默认，无定位 忽略top bottom left right z-index属性
+            absolute 绝对定位 top bottom left right z-index 可用 相对于浏览器窗口 左上角
+            relative 相对定位，相对于最近的声明父元素
+            fixed 绝对定位，相对于浏览器视口
+    </pre>
+    <h3>
+        锚点链接，用于网页内的跳转，与a标签搭配使用
+    </h3>
+    <pre>
+        设置方法：
+            给元素定义命名的id
+                &lt;标签 id="锚点名称" &gt; &lt;标签&gt;
+            命名锚点链接
+                &lt;a href="#锚点id"&gt;跳转&lt;/a&gt;
+    </pre>
+    <h3>
+        图片整合
+    </h3>
+    <pre>
+        图片整合技术(css sprites 精灵图)
+            将多个图片融合到一张图片里，然后通过css的banckground属性背景定位技术布局网页背景
+            这样可以减少服务器被请求的压力
+            {background-position:0px -20px;}
+    </pre>
+    <h3>
+        宽高自适应
+    </h3>
+    <pre>
+        网页布局中经常需要定义宽和高，但很多的时候我们希望元素的大小能够根据窗口或者子元素自动调整，
+        这就是自适应，它能够使网页显示更灵活，可以适配不同的设备，不同的窗口和不同的分辨率。
+
+        宽度自适应
+            元素宽度设置为100%(块级元素默认为100%,占父物体的)
+        
+        元素具备最小高度的自适应
+            min-height 最小高度(不能抵御，小于时候会以滚动条的形式出现，大于时候会适应浏览器串口缩放)
+            max-height 最大高度(不能大于，大于部分会溢出，内容少时候会适应浏览器窗口缩放)
+        
+        高度自适应
+            元素高度自适应窗口高度
+                设置方法：
+                    html,body{height:100%;}
+                    需要自适应的元素{height:100%;}
+            自适应元素的高度
+                父元素：height:value;
+                需要自适应的子元素：height:100%;
+            height:auto; 是根据块内容自动调整高度
+            height:100%; 是指其相对父块高度而定义的高度，也就是按照离他最近且有定义高度的父层的高度来定义
+    </pre>
+    <h3>
+        浏览器兼容
+    </h3>
+    <pre>
+        IE6常见css解析bug及hack
+
+        图片间隙
+            [描述] div中的图片间隙，在IE6及低版本中，在div中插入图片时候，图片会将div下方撑大三个像素
+            [解决]将img添加声明{display:block;} img默认为inline-block
+        
+        双倍浮动
+            IE6及更低版本中，会错误地把浮动边界加倍显示
+            hack:给浮动元素添加声明{display:inline;}
+
+        默认高度
+            在IE6及低版本中，部分块级元素拥有默认高度，低于18px高度
+            hack:
+                给元素添加声明{font-size:0;}
+                给元素添加声明{overflow:hiddern;}
+        
+        表单行高不一致
+            表单元素行高对齐方式不一致
+            hack:给表单元素添加声明{float:left;}
+        
+        百分比bug
+            在IE6及更低版本中解析百分比时候，会按四舍五入的方式计算，从而导致50%+50% > 100%的情况
+            hack:给右面的浮动元素添加声明{clear:right;}
+        
+        鼠标指针bug
+            cursor属性的hand属性值只有IE浏览器识别，其他浏览器不识别该属性声明，cursor属性的pointer属性值
+            IE6以上版本及其他浏览器都能识别该属性值。
+        
+        【*】按钮元素默认大小不一致
+            各个浏览器中按钮的元素大小不一致
+            hack:
+                统一大小(使用a标签模拟按钮形状，设置相同的样式)
+                在input上些按钮的样式，一定要把input的边框去掉
+                如果这个按钮是一个图片，直接把图片作为按钮的背景图即可  
+
+        透明属性
+            IE浏览器写法
+                filter:alpha(opacity=value);取值范围0-100
+                兼容其他浏览器写法
+                    opacity:value;取值范围0.1-0.9
+    </pre>
+    <h3>
+        过滤器filter
+    </h3>
+    <pre>
+        下划线属性过滤器
+            当在一个属性前面添加一个下划线后，由于符合标准浏览器并不能识别带有下划线的属性而忽略这个属性，
+            但在IE6及更低版本中可以继续解析此规则
+            选择符{_属性：属性值;}
+        
+        !important 关键字过滤器
+            它表示所附加的声明具有最高的优先级的意思，但由于IE6及更低版本的不能识别它，我们可以利用这个bug
+            作为过滤器来兼容IE6及其他标准浏览器
+                选择符{属性：值!important;}
+        
+        * 属性过滤器
+            当一个属性前面加了*后，该属性只能够被IE7浏览器识别，其他浏览器忽略该规则
+            选择符{*属性：值；}
+    </pre>
+    <h3>
+        表单表格高级
+    </h3>
+    <pre>
+        表单字段集&lt;fieldset&gt;&lt;/fieldset&gt;
+            相当于一个方框，在字段集中可以包含文本和其他元素，该元素用于对表单中的元素进行分组并在
+            文档中区别标出文本。fieldset可以嵌套使用，在其内部可以设置多个fieldset对象，disabled
+            属性可以定义控件不可用。
+        
+        字段级标题 &lt;legend&gt;&lt;/legend&gt;
+            legend元素可以在fieldset对象绘制的方框内插入一个标题，legend必须是fieldset内的第一个元素
+        
+        提示信息标签 &lt;label for="绑定控件id名"&gt;&lt;/label&gt;
+            label元素用来定义标签，为页面上的其他元素指定提示信息，要将label元素绑定到其他控件上，可以
+            将label元素的for属性设置为与该控件的id属性值相同
+    </pre>
+</body>
+</html>
