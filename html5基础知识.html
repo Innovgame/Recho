@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>html5基础知识</title>
+    <style>
+        pre{
+            font-size: 20px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML5基础知识</h1>
+    <hr>
+    <h2>概括</h2>
+    <h3>
+        <ol>
+            <li>文本标题</li>
+            <li>字体及字符实体</li>
+            <li>常用元素</li>
+            <li>列表</li>
+            <li>超链接和图像</li>
+            <li>表格元素</li>
+            <li>表单元素</li>
+        </ol>
+    </h3>
+    <h3>
+        文本标题
+        <pre>
+            h1-h6 h1-h6大小依次递减，默认字体16px > h6
+        </pre>
+    </h3>
+    <h3>字体</h3>
+    <h4>
+        <pre>
+            &lt;i&gt;标签和&lt;em&gt;标签:基本表现形式一样，都是倾斜，一种逻辑风格一种物理风格
+            加粗标记&lt;b&gt;&lt;/b&gt;|&lt;strong&gt;&lt;/strong&gt;
+            下划线： &lt;u&gt;&lt;/u&gt;
+        </pre> 
+    </h4>
+    <h3>
+        字符实体<br>
+        <pre>
+            字符实体（将一些html的关键字转义表示出来），一般以&开始;结束
+            常见：
+            nbsp:&nbsp;不换行空格；
+            lt: &lt;
+            gt: &gt;
+            copy: &copy;
+        </pre>
+    </h3>
+    <h3>
+        常用元素
+        <pre>
+            空标记，设置换行： &lt;br/&gt;
+            水平线： &lt;hr/&gt;
+            段落标记： &lt;p&gt;&lt;/p&gt;
+            &lt;div&gt;(块级元素)与&lt;span&gt;(行内元素)
+        </pre>
+    </h3>
+    <h3>
+        各种列表
+        <pre>
+            无序列表：
+            &lt;ul&gt; 
+                &lt;li&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+            有序列表：
+            &lt;ol&gt; 
+                &lt;li&gt;
+                &lt;/li&gt;
+            &lt;/ol&gt;
+            自定义列表：
+            &lt;dl&gt; 
+                &lt;dt&gt;
+                    &lt;dd&gt;&lt;/dd&gt;
+                &lt;/dt&gt;
+                &lt;dt&gt;
+                    &lt;dd&gt;&lt;/dd&gt;
+                &lt;/dt&gt;
+            &lt;/dl&gt;
+        </pre>
+    </h3>
+    <h3>
+        超链接和图像
+        <pre>
+            a标签和img标签
+            &lt;a href="#" title="鼠标悬停显示的文字" &gt;链接内容&lt;/a&gt;
+            &lt;img src="url" alt="图片不显示显示的文字"&gt;
+        </pre>
+    </h3>
+    <h3>
+        表格元素
+        <pre>
+            表格的相关标签：
+            &lt;table&gt;
+                &lt;thead&gt;&lt;/thead&gt;
+                &lt;tbody&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;&lt;/th&gt;
+                        &lt;td&gt;&lt;/td&gt;
+                        &lt;td&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+                &lt;tfoot&gt;&lt;/tfoot&gt;
+            &lt;/table&gt;
+            
+            表格相关属性：
+                width:宽度 height:高度 border:边框 borderColor:边框颜色
+                cellspacing:单元格之间的距离 cellpadding:单元格内容之间的距离
+            列上的：
+                align:水平对齐方式(left/right/center)
+                valign:垂直对齐方式
+                colspan:合并的列数(注意要删除相邻的列)
+                rowspan:合并行(要删除下面行中的列)
+        </pre>
+    </h3>
+    <h3>
+        表单元素(行内元素)
+        <pre>
+            表单域：
+                &lt;form name="表单名" method="get/post" action="xxx.js"&gt;&lt;/form&gt;
+
+            表单控件：
+
+                文本框：&lt;input type="text" value="默认值"&gt;
+                密码框：&lt;input type="password"&gt;
+                提交按钮：
+                    &lt;input type="submit" value="按钮内容"&gt; 
+                    &lt;input type="reset" value="按钮内容"&gt; 不提交知识清空表单
+                单选按钮：&lt;input type="radio" name="组名"&gt;
+                复选按钮：&lt;input type="checkbox" name="组名"&gt;
+                按钮：&lt;input type="button" value="按钮名"&gt;
+                下拉菜单：
+                    &lt;select name="" id=""&gt;
+                        &lt;option value=""&gt;下拉1&lt;/option&gt;
+                        &lt;option value=""&gt;下拉2&lt;/option&gt;
+                    &lt;/select&gt;                
+                多行文本框：
+                    &lt;textarea name="" id="" cols="30" rows="10"&gt;&lt;/textarea&gt;
+
+            属性：
+                checked="checked" 表示选中
+                disabled="disabled" 表示禁用
+        </pre>
+    </h3>
+</body>
+</html>
