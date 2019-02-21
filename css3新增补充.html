@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3新增补充</title>
+    <style type="text/css">
+        h3{
+            text-indent: 32px;
+        }
+        pre{
+            line-height: 1.7;
+            font-size: 20px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS3新增补充</h1>
+    <hr>
+    <h2>浏览器前缀的简介和应用</h2>
+    <h3>有的css可能不被一些浏览器支持，需要在属性前加前缀</h3>
+    <pre>
+        -webkit-
+            基于WebKit内核的浏览器，如Chrome Safari等
+        -moz- 
+            火狐浏览器
+        -ms-
+            IE 和Edge
+        -o- 
+            Opera
+    </pre>
+    <h2>
+        服务器端的字体和iconfont
+    </h2>
+    <h3>服务器端字体</h3>
+    <pre>
+        网页中可以使用安装在服务器端的字体，只要某个字体在服务器端已经安装，网页就能够正常显示了
+        语法: @font-face
+            例：@font-face{
+                font-family:fontName;
+                src:url("fonts/xxx.otf|xxx.ttf");
+                format("opentype"|"truetype");
+            }
+            引用：
+            div{
+                font-family:fontName;
+            }
+        fontName用来声明使用的服务器端的字体，format用来声明字体的文件的格式，可以省略文件的格式声明而单独使用src属性值
+        字体文件的格式有OpenType和TrueType，前者的属性值为opentype后者的为truetype,前者文件拓展名为.otf后者为.ttf
+    </pre>
+    <h3>
+        iconfont
+    </h3>
+    <pre>
+        通常所指的iconfont是用字体文件取代图片文件来展示图标，特殊字体等方法。
+        提及要比图片小的多，有更好的可维护性(因为是矢量，拉伸不变性，颜色可以自行更换，支持一些css3对文字的效果)
+
+        【*】阿里巴巴矢量图官网：<a href="http://www.iconfont.cn">www.iconfont.cn</a>
+        使用步骤：
+            加入购物车->下载代码->在网页中引用
+    </pre>
+    <h2>
+        background的一些新增样式
+    </h2>
+    <pre>
+        背景剪切
+            {background-clip:border-box|padding-box|content-box;}
+        绘制背景时候的起始位置
+            {background-origin:border-box|padding-box|content-box;}
+        定义背景图片的大小
+            {background-size:length|percentage|cover|contain;}
+        在一个元素中添加多张背景图
+            div{background-image:url(),url(),url();}
+            结合background-position和background-repeat可分别按顺序赋值
+        使用一张图片作为边框
+            {border-image:url()}
+    </pre>
+    <h2>
+        盒阴影
+    </h2>
+    <pre>
+        box-shadow
+            {box-shadow:h-shadow v-shadow blur(模糊距离) spread(尺寸) color inset|outset;}
+    </pre>
+</body>
+</html>
