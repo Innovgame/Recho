@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS新增知识</title>
+    <style type="text/css">
+        h3{
+            text-indent: 32px;
+        }
+        pre{
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS新增知识</h1>
+    <hr>
+    <h2>
+        CSS选择器
+    </h2>
+    <h3>
+        属性选择器
+    </h3>
+    <pre>
+        E[att]{sRules;}
+            用于选择带有指定属性的元素
+        E[att="value"]{sRules;}
+            用于选择带有指定属性和值的元素
+        E[att~="value"]{sRules;}
+            用于选取属性值中包含指定词汇的元素
+        E[att|="value"]{sRules;}
+            选区带有所指定值开头的属性值的元素，该值必须为整个单词
+        E[att^="value"]{sRules;}
+            匹配属性值以指定值开头的每个元素
+        E[att$="value"]{sRules;}
+            匹配属性值以指定结尾的每个元素
+        E[att*="value"]{sRules;}
+            匹配属性值中包含指定值的每个元素
+    </pre>
+    <h3>
+        伪类选择器
+    </h3>
+    <pre>
+
+        结构性伪类选择器
+            :first-child{}与:last-child{}
+                单独指定第一个子元素和最后一个子元素的样式
+            :nth-child(n){}与:nth-last-child(n){}
+                指定序号的子元素使用样式
+
+        对有所第奇数个子元素或者第偶数个子元素使用样式
+            :nth-child(odd){}
+                对所有正数下第奇数个子元素
+            :nth-child(even){}
+                对所有正数下的第偶数个子元素
+            :nth-last-child(odd){}
+                对所有倒数下的第奇数个子元素
+            :nth-last-child(even){}
+                对所有倒数下的第偶数个子元素
+
+        先对一类元素进行选择(先分类再选择)
+            :nth-of-type(num/even/odd){}与:nth-last-of-type(num/odd/even){}
+                使用这两种选择器时候，css3再计算子元素是第奇数个子元素还是第偶数个子元素的时候，就只针对
+                同类型的子元素进行计算.
+        
+        使用通项表达式选择
+            :nth-child(an+b){}与:nth-last-child(an+b){}
+                类似于数列的通项表达式一样
+        
+        :only-child {}
+            只有一个子元素的时候使用
+    </pre>
+    <h3>
+        目标伪类选择器
+    </h3>
+    <pre>
+        :target{}
+            突出显示后动的html锚点
+            URL 后带有锚点名称符号#，指向文档内的某个具体的元素，这个被链接的元素就是目标元素(target element)
+            使用该选择器来对页面中的某个target元素(该元素的id当作页面中的超链接来使用)指定样式，该样式只再用户点击
+            了页面中的超链接后并且跳转到target后起作用
+    </pre>
+    <h3>
+        层级选择器
+    </h3>
+    <pre>
+        E > F{sRules;}
+            子元素选择器，只能选择作为某元素子元素的元素，选择匹配的F元素，并且匹配的F元素为所匹配的E元素的子元素
+        E + F{sRules;}
+            相邻兄弟选择器，可以选择紧贴另一个元素后的元素，并且他们呢具有同一个相同的父元素，E,F两元素具有相同的
+            父元素，而且F元素再E元素后面，并且相邻。
+        E ~ F{sRules;}
+            用来指定位于同一个父元素之中的某个元素之后的所有其他某个种类的兄弟元素所使用的样式。
+            选择某元素后面的所有兄弟元素，需要同一个父元素之中，E和F元素是通属于一个父元素之内，并且F元素
+            再E元素之后，那么E~F选择器将选择所有E元素后面的F元素
+    </pre>
+</body>
+</html>
