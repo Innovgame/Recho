@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2d3d效果</title>
+    <style type="text/css">
+        h3{
+            text-indent: 32px;
+        }
+        pre{
+            font-weight: 900;
+            font-size: 20px;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <h1>2D3D效果</h1>
+    <hr>
+    <h2>2D效果</h2>
+    <p>通过css3可以在不使用flash与js的情况下，当元素从一种样式变换到另一种样式的时候为元素添加效果<br>
+        [注意]<br>
+        浏览器支持：IE10 Firefox Chrome Opera支持transition属性
+        Safari需要加-webkit-前缀
+        IE9以及以前的版本不支持transition chrome25之前需要加-webkit-
+    </p>
+    <pre>
+        要实现这一点，必须要规定两项内容：
+            规定你希望把效果添加到那个css属性上
+            规定效果的时长
+        
+        transition 以下四种的简写
+            transition-property 规定效果应用变换的css属性名称
+            transition-duration 时长
+            transition-timing-funcition 过度效果时间曲线，默认为ease
+            transition-delay 设置延迟几秒执行
+    </pre>
+    <h3>2D变形</h3>
+    <pre>
+        transform 属性 变形改变 都是从中心点开始
+        transform-origin(x,y); 修改变换的锚点
+        css3种transform主要包括以下集中：
+            旋转 rotate {transform:rotate(30deg);}
+            扭曲 skew {transform:skew(x,y);||skewX(x);||skewY(y);}
+            缩放 scale {transform:scale(0.5/2);scaleX()|scaleY();}
+            移动 translate {transform:translate(x,y)||translateX()||translateY();}
+            矩阵变形 matrix        
+    </pre>
+    <h3>3D变形</h3>
+    <pre>
+        Css3种3D位移主要有两种函数，translateZ()和translate3c()
+            x轴：从左向右
+            y轴：从上到下
+            z轴：从里向外
+    </pre>
+    <h3>
+        关键帧动画
+    </h3>
+    <pre>
+        @keyframes animationName{
+            keyframes-selector{css-styles;}
+            from{}
+            to{}
+            ||
+            0%{}
+            50%{}
+            100%{}
+        }
+
+        animatiion 动画属性的简写形式
+            animation-iteration-count:n||infinite(无限次);重复次数
+            animation-direction:normal||alternate(反向);动画播放的方向
+    </pre>
+</body>
+</html>
